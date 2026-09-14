@@ -9,8 +9,11 @@ import EmployeeBlueprints.EmployeeType;
  * @author lhartman2
  * @version 1.0.1
  */
+
+@EmployeeObjects.EmployeeType(type = "Salary")
 public final class SalaryEmployee extends Employee {
-    
+
+    @EmployeeObjects.PayRate(type = "Commission")
     private double salary;
 
     /**
@@ -32,6 +35,7 @@ public final class SalaryEmployee extends Employee {
      * Calculates the weekly pay of the employee. salary/52
      * @return double for the weekly pay
      */
+    @EmployeeObjects.WeeklyPayCalculator
     @Override
     public double calculateWeeklyPay()
     {
